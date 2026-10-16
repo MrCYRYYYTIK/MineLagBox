@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MineLagBox</title>
+<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<div class="app">
+  <div class="header">
+    <div class="logo">💣 MineLagBox</div>
+    <div class="stats">
+      <div class="stat">Баланс<b id="balance">1000 💰</b></div>
+      <div class="stat">Скинов<b id="skinsCount">0</b></div>
+      <div class="stat">Игрок<b id="playerName">Гость</b></div>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="tabs">
+      <div class="tab active" data-tab="cases">📦 Кейсы</div>
+      <div class="tab" data-tab="inventory">🎒 Инвентарь</div>
+      <div class="tab" data-tab="battle">⚔️ Бой</div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<!-- Модалка открытия кейса -->
+<div class="modal" id="spinModal">
+  <div class="modal-inner">
+    <div class="modal-title" id="spinTitle">📦 Открытие...</div>
+    <div class="spin-window">
+      <div class="spin-pointer"></div>
+      <div class="spin-strip" id="spinStrip"></div>
+    </div>
+    <button class="btn full" id="spinCloseBtn" style="display:none" onclick="zakrytModal()">Забрать</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Порядок важен! -->
+<script src="js/config.js"></script>
+<script src="js/state.js"></script>
+<script src="js/vk.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/cases.js"></script>
+<script src="js/inventory.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
